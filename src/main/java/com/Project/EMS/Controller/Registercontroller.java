@@ -27,7 +27,7 @@ public class Registercontroller {
 	@Autowired(required = true)
 	private AdminRepository adminRepository;
 	
-	@PostMapping("/register")
+	@RequestMapping("/register")
 	private String register() {
 		return "Register.jsp";
 	}
@@ -101,9 +101,10 @@ public class Registercontroller {
 	
 	
 	@RequestMapping("/logout")
-	public String logoutdashborad() {
+	public String logoutdashborad(HttpSession session) {
+		session.invalidate();
 		System.out.println("logout....");
-		return "Entrypage.jsp";
+		return "redirect:/";
 	}
 	
 

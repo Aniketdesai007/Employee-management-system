@@ -25,7 +25,13 @@ public class EmsController {
 	
 	@GetMapping("/")
 	public String firstpage() {
-		return "Entrypage.jsp";
+		return "Homepage.jsp";
+	}
+	
+	@GetMapping("/login/entrypage")
+	public String loginpage() {
+		return "redirect:/Entrypage.jsp";
+		
 	}
 	
 	@RequestMapping("/login")
